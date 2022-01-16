@@ -1,0 +1,9 @@
+<h1><%= @college.name %></h1>
+
+<p><%= @college.city %></p>
+<p><%= @college.state %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_college_path(@college) %></li>
+  <li><%= button_to "Destroy", college_path(@college),method: :delete, data: {confirm: "Are you sure?"}  %></li>
+</ul>
