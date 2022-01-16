@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_16_015429) do
+ActiveRecord::Schema.define(version: 2022_01_16_111312) do
 
   create_table "colleges", force: :cascade do |t|
     t.string "name"
@@ -20,4 +20,30 @@ ActiveRecord::Schema.define(version: 2022_01_16_015429) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "student_marks", force: :cascade do |t|
+    t.integer "m1"
+    t.integer "m2"
+    t.integer "m3"
+    t.integer "total"
+    t.integer "student_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["student_id"], name: "index_student_marks_on_student_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.string "email"
+    t.string "course"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.integer "mobile"
+    t.string "name"
+    t.string "avatar"
+  end
+
+  add_foreign_key "student_marks", "students"
 end

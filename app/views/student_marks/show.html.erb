@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>M1:</strong>
+  <%= @student_mark.m1 %>
+</p>
+
+<p>
+  <strong>M2:</strong>
+  <%= @student_mark.m2 %>
+</p>
+
+<p>
+  <strong>M3:</strong>
+  <%= @student_mark.m3 %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @student_mark.total %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @student_mark.student.name %>
+</p>
+
+<%= link_to 'Edit', edit_student_mark_path(@student_mark) %> |
+<%= link_to 'Back', student_marks_path %>
