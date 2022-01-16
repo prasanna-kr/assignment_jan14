@@ -25,6 +25,7 @@ class StudentMarksController < ApplicationController
 
     respond_to do |format|
       if @student_mark.save
+        StudentMailer.student_mark_email(@student_mark).deliver_now
         format.html { redirect_to student_mark_url(@student_mark), notice: "Student mark was successfully created." }
         format.json { render :show, status: :created, location: @student_mark }
       else
